@@ -68,6 +68,15 @@ class Products extends \Phalcon\Mvc\Model
     {
         $this->setSchema("phalcon_valid_crud");
         $this->setSource("Products");
+        
+        $this->belongsTo(
+            'partner_id',
+            'Partners',
+            'id',
+            [
+                'reusable' => true,
+            ]
+        );
     }
 
     /**

@@ -1,4 +1,5 @@
 <?php
+use Phalcon\Mvc\Model\Relation;
 
 class Partners extends \Phalcon\Mvc\Model
 {
@@ -54,6 +55,17 @@ class Partners extends \Phalcon\Mvc\Model
     {
         $this->setSchema("phalcon_valid_crud");
         $this->setSource("Partners");
+        
+        $this->hasMany(
+            "id",
+            "Products",
+            "partner_id",
+            [
+                "foreignKey" => [
+                    "action" => Relation::ACTION_CASCADE,
+                ]
+            ]
+        );
     }
 
     /**
