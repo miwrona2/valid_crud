@@ -8,12 +8,8 @@ echo "<br />";
 <form method='post' action="create">
   <fieldset>
     
-    <legend>Create new product</legend>
+    <legend>Create new partner</legend>
     
-    <div>
-      <label for="partner_id">Partner: </label>
-      <?php echo $form->render('partner_id'); ?>
-    </div>
     <div>
       <label for="name">Name: </label>
       <?php echo $form->render('name'); ?>
@@ -23,16 +19,12 @@ echo "<br />";
       <?php echo $form->render('description'); ?>
     </div>
     <div>
-      <label for="availability">Availability: </label>
-      <?php echo $form->render('availability'); ?>
+      <label for="NIP">NIP: </label>
+      <?php echo $form->render('NIP'); ?>
     </div>
     <div>
-      <label for="currency">Currency: </label>
-      <?php echo $form->render('currency'); ?>
-    </div>
-    <div>
-      <label for="price">Price: </label>
-      <?php echo $form->render('price'); ?>
+      <label for="webpage">Webpage: </label>
+      <?php echo $form->render('webpage'); ?>
     </div>
 
     <p>

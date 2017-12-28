@@ -1,5 +1,31 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+<?php echo $this->tag->linkTo("", "back"); ?>
+<h1><?php echo $title ?></h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Partner's Id </th>
+            <th>Name </th>
+            <th>Description </th>
+            <th>NIP </th>
+            <th>webpage </th>
+            <th>Created </th>
+            <th>...</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach ($partners as $partner) {
+        echo "<tr><td>",$partner->id, "</td><td>",
+            $partner->name, "</td><td>",
+            $partner->description, "</td><td>",
+            $partner->NIP, "</td><td>",
+            $partner->webpage, "</td><td>",
+            $partner->created, "</td><tr>";
 
-<?php
-echo $this->tag->linkTo("", "back");
-echo "<br />";
-echo $title;
+    }
+    ?>
+    </tbody>
+</table>
+<hr >
+<?php echo $this->tag->linkTo("partners/formCreate", "create"); ?>
