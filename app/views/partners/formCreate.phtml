@@ -1,35 +1,37 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
-<?php echo $this->getContent() ?>
+<div class="container">
+    <?php echo $this->getContent() ?>
 
-<?php
-echo $this->tag->linkTo("", "back");
-echo "<br />";
-?>
-<form method='post' action="create">
-  <fieldset>
-    
-    <legend>Create new partner</legend>
-    
-    <div>
-      <label for="name">Name: </label>
-      <?php echo $form->render('name'); ?>
-    </div>
-    <div>
-      <label for="description">Description: </label>
-      <?php echo $form->render('description'); ?>
-    </div>
-    <div>
-      <label for="NIP">NIP: </label>
-      <?php echo $form->render('NIP'); ?>
-    </div>
-    <div>
-      <label for="webpage">Webpage: </label>
-      <?php echo $form->render('webpage'); ?>
-    </div>
+    <?php
+    echo $this->tag->linkTo(["", "back", "class" => "btn btn-default active"]);
+    echo "<br />";
+    ?>
+    <form method='post' action="create">
+      <fieldset>
 
-    <p>
-        <input type='submit' value='Save' class="btn btn-primary"/>
-    </p>
+        <legend>Create new partner</legend>
 
-  </fieldset>
-</form>
+        <div>
+          <label for="name">Name: </label>
+          <?php echo $form->render('name'); ?>
+        </div>
+        <div>
+          <label for="description">Description: </label>
+          <?php echo $form->render('description'); ?>
+        </div>
+        <div>
+          <label for="NIP">NIP: </label>
+          <?php echo $form->render('NIP'); ?>
+        </div>
+        <div>
+          <label for="webpage">Webpage: </label>
+          <?php echo $form->render('webpage'); ?>
+        </div>
+
+        <p>
+            <input type='submit' value='Save' class="btn btn-primary"/>
+        </p>
+
+      </fieldset>
+    </form>
+</div>

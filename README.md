@@ -9,3 +9,9 @@ The main point of this project is to test validation of form's fields and databa
 **MySQL configuration**  
 * tables from database in ```app/db```  
 * don't forget to change your credentials for connection with mySQL in ```app/config/config.php```  
+
+## Installation
+
+Needed any local server (for example Xampp or Wamp).  
+Download or clone repo and put in your localhost direction 
+(for example `c:/xampp/htdocs/` default for xampp )

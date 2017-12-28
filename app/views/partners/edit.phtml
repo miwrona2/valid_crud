@@ -1,31 +1,33 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<?= $this->tag->form(['partners/save', 'role' => 'form']) ?>
+<div class="container">
+    <?= $this->tag->form(['partners/save', 'role' => 'form']) ?>
 
-    <ul class="pager">
-        <li class="previous pull-left">
-            <?= $this->tag->linkTo(['partners', '&larr; Go Back']) ?>
-        </li>
-    </ul>
+        <ul class="pager">
+            <li class="previous pull-left">
+                <?= $this->tag->linkTo(['partners', '&larr; Go Back']) ?>
+            </li>
+        </ul>
 
-    <?= $this->getContent() ?>
+        <?= $this->getContent() ?>
 
-    <h2>Edit partners</h2>
+        <h2>Edit partners</h2>
 
-    <fieldset>
+        <fieldset>
 
-        <?php foreach ($form as $element) { ?>
-            <?php if (is_a($element, 'Phalcon\Forms\Element\Hidden')) { ?>
-                <?= $element ?>
-            <?php } else { ?>
-                <div class="form-group">
-                    <?= $element->label() ?>
-                    <?= $element->render(['class' => 'form-control']) ?>
-                </div>
+            <?php foreach ($form as $element) { ?>
+                <?php if (is_a($element, 'Phalcon\Forms\Element\Hidden')) { ?>
+                    <?= $element ?>
+                <?php } else { ?>
+                    <div class="form-group">
+                        <?= $element->label() ?>
+                        <?= $element->render(['class' => 'form-control']) ?>
+                    </div>
+                <?php } ?>
             <?php } ?>
-        <?php } ?>
 
-        <?= $this->tag->submitButton(['Save', 'class' => 'btn btn-success']) ?>
+            <?= $this->tag->submitButton(['Save', 'class' => 'btn btn-success']) ?>
 
-    </fieldset>
+        </fieldset>
 
-</form>
+    </form>
+</div>

@@ -1,6 +1,14 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+<div class="container">
 <?php echo $this->getContent() ?>
-<?php echo $this->tag->linkTo("", "back"); ?>
+<ul class="pager">
+    <li class="previous">
+        <?php echo $this->tag->linkTo([
+                "",
+                "&larr; Home", 
+        ]); ?>  
+    </li>
+</ul>
 <h1><?php echo $title ?></h1>
 <table class="table">
     <thead>
@@ -30,4 +38,5 @@
     </tbody>
 </table>
 <hr >
-<?php echo $this->tag->linkTo("partners/formCreate", "create"); ?>
+<?php echo $this->tag->linkTo(["partners/formCreate", "create", "class" => "btn btn-primary"]); ?>
+</div>

@@ -1,8 +1,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<?php echo $this->getContent() ?>
-<?php
-echo $this->tag->linkTo(["", "back", "class"=>"btn btn-link"]);
-?>
+<div class="container">
+<ul class="pager">
+    <li class="previous">
+        <?php echo $this->tag->linkTo([
+                "",
+                "&larr; Home", 
+        ]); ?>  
+    </li>
+</ul>
 <br />
 <h1><?= $title;?></h1>
 <br />
@@ -37,4 +42,5 @@ echo $this->tag->linkTo(["", "back", "class"=>"btn btn-link"]);
     </tbody>
 </table>
 <hr >
-<?php echo $this->tag->linkTo("products/formCreate", "create"); ?>
+<?php echo $this->tag->linkTo(["products/formCreate", "create", "class" => "btn btn-primary"]); ?>
+</div>
