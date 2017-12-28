@@ -7,7 +7,8 @@ The main point of this project is to test validation of form's fields and databa
 
 
 **MySQL configuration**  
-* tables from database in ```app/db```  
+* tables from database in ```app/db``` (just create new database 'phalcon_valid_crud' in your phpMyAdmin panel, 
+create 2 empty tables: `'partners'` and `'products'` and paste code from `partners.sql` and `products.sql` respectively)  
 * don't forget to change your credentials for connection with mySQL in ```app/config/config.php```  
 
 ## Installation
