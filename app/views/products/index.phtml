@@ -1,9 +1,38 @@
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <?php
-echo $this->tag->linkTo("", "back");
-echo "<br />";
-echo $title;
-echo "<br />";
-foreach ($products as $product) {
-    echo $product->name;
-}
+echo $this->tag->linkTo(["", "back", "class"=>"btn btn-link"]);
+?>
+<br />
+<?= $title;?>
+<br />
+<?php echo $this->getContent() ?>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Partner's Id </th>
+            <th>Name </th>
+            <th>Description </th>
+            <th>Price </th>
+            <th>Currency </th>
+            <th>Availablity </th>
+            <th>Created </th>
+            <th>...</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach ($products as $product) {
+        echo "<tr><td>",$product->partner_id, "</td><td>",
+            $product->name, "</td><td>",
+            $product->description, "</td><td>",
+            $product->price, "</td><td>",
+            $product->currency, "</td><td>",
+            $product->availability, "</td><td>",
+            $product->created, "</td><tr>";
+
+    }
+    ?>
+    </tbody>
+</table>
+<hr >
+<?php echo $this->tag->linkTo("products/formCreate", "create"); ?>

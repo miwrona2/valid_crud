@@ -22,6 +22,7 @@ return new \Phalcon\Config([
         'migrationsDir'  => APP_PATH . '/migrations/',
         'viewsDir'       => APP_PATH . '/views/',
         'pluginsDir'     => APP_PATH . '/plugins/',
+        'formsDir'     => APP_PATH . '/forms/',
         'libraryDir'     => APP_PATH . '/library/',
         'cacheDir'       => BASE_PATH . '/cache/',
 
