@@ -12,11 +12,18 @@ class PartnersController extends Controller
         $partners = Partners::find(['order' => 'id']);
         $this->view->partners = $partners;
     }
-    
+        
+    /**
+     * just a view for creating new products
+     * real action happens in createAction() below
+     */
     public function formCreateAction() {
         $this->view->form = new PartnersForm();
     }
     
+    /*
+     * view in formCreateAction() above
+     */
     public function createAction() {
         
         if (!$this->request->isPost()) {

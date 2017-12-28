@@ -12,7 +12,7 @@ class ProductsController extends Controller
     }
     
     /**
-     * just a view for creating new proudcts
+     * just a view for creating new products
      * real action happens in createAction() below
      */
     public function formCreateAction() {
@@ -43,7 +43,7 @@ class ProductsController extends Controller
             }
             return $this->dispatcher->forward(
                 [
-                    "controller" => "product",
+                    "controller" => "products",
                     "action"     => "formCreate",
                 ]
             );
@@ -74,6 +74,7 @@ class ProductsController extends Controller
         );
         
     }
+    
     public function deleteAction($id) {
         
         $product = Products::findFirstById($id);
