@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<?php echo $this->getContent() ?>
 <?php
 echo $this->tag->linkTo(["", "back", "class"=>"btn btn-link"]);
 ?>
 <br />
-<?= $title;?>
+<h1><?= $title;?></h1>
 <br />
-<?php echo $this->getContent() ?>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -28,7 +28,8 @@ echo $this->tag->linkTo(["", "back", "class"=>"btn btn-link"]);
             $product->price, "</td><td>",
             $product->currency, "</td><td>",
             $product->availability, "</td><td>",
-            $product->created, "</td><tr>";
+            $product->created, "</td><td>",
+            $this->tag->linkTo("products/delete/".$product->id, "Delete"), "</td><tr>";
 
     }
     ?>

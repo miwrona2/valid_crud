@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+<?php echo $this->getContent() ?>
 <?php echo $this->tag->linkTo("", "back"); ?>
 <h1><?php echo $title ?></h1>
 <table class="table">
@@ -21,7 +22,8 @@
             $partner->description, "</td><td>",
             $partner->NIP, "</td><td>",
             $partner->webpage, "</td><td>",
-            $partner->created, "</td><tr>";
+            $partner->created, "</td><td>",
+            $this->tag->linkTo("partners/delete/".$partner->id, "Delete"), "</td><tr>";
 
     }
     ?>

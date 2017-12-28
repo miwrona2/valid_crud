@@ -63,9 +63,43 @@ class ProductsController extends Controller
 
         $form->clear();
 
-        $this->flash->success("Product was created successfully");
+        $this->flash->success("Product has been created successfully");
 
 
+        return $this->dispatcher->forward(
+            [
+                "controller" => "products",
+                "action"     => "index",
+            ]
+        );
+        
+    }
+    public function deleteAction($id) {
+        
+        $product = Products::findFirstById($id);
+        
+        if(!$product) {
+            $this->flash->error("Couldn't find a product with this id");
+            return $this->dispatcher->forward([
+                "controller" => "products",
+                "action" => "index",
+            ]);
+        }
+        
+        if (!$product->delete()) {
+            foreach ($product->getMessages() as $message) {
+                $this->flash->error($message);
+            }
+            return $this->dispatcher->forward(
+                [
+                    "controller" => "product",
+                    "action"     => "index",
+                ]
+            );
+        }
+        
+        $this->flash->success("Product has been deleted");
+        
         return $this->dispatcher->forward(
             [
                 "controller" => "products",
