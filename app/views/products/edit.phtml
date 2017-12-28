@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<?= $this->tag->form(['products/save', 'role' => 'form']) ?>
+
+    <ul class="pager">
+        <li class="previous pull-left">
+            <?= $this->tag->linkTo(['products', '&larr; Go Back']) ?>
+        </li>
+    </ul>
+
+    <?= $this->getContent() ?>
+
+    <h2>Edit products</h2>
+
+    <fieldset>
+
+        <?php foreach ($form as $element) { ?>
+            <?php if (is_a($element, 'Phalcon\Forms\Element\Hidden')) { ?>
+                <?= $element ?>
+            <?php } else { ?>
+                <div class="form-group">
+                    <?= $element->label() ?>
+                    <?= $element->render(['class' => 'form-control']) ?>
+                </div>
+            <?php } ?>
+        <?php } ?>
+
+    <?= $this->tag->submitButton(['Save', 'class' => 'btn btn-success']) ?>
+    </fieldset>
+
+</form>

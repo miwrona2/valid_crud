@@ -3,6 +3,7 @@
 use Phalcon\Forms\Form;
 use Phalcon\Forms\Element\Text;
 use Phalcon\Forms\Element\Select;
+use Phalcon\Forms\Element\Hidden;
 
 use Phalcon\Validation\Validator\Numericality;
 use Phalcon\Validation\Validator\PresenceOf;
@@ -11,6 +12,20 @@ use Phalcon\Validation\Validator\Uniqueness;
 Class ProductsForm extends Form
 {
     public function initialize($entity = null, $options = []) {
+        
+        if (!isset($options["edit"])) {
+            $element = new Text("id");
+
+            $element->setLabel("Id");
+
+            $this->add(
+                $element
+            );
+        } else {
+            $this->add(
+                new Hidden("id")
+            );
+        }
         
         $partner_id = new Select("partner_id", Partners::find(),
             [

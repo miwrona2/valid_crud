@@ -29,6 +29,7 @@ echo $this->tag->linkTo(["", "back", "class"=>"btn btn-link"]);
             $product->currency, "</td><td>",
             $product->availability, "</td><td>",
             $product->created, "</td><td>",
+            $this->tag->linkTo("products/edit/".$product->id, "Edit"), "</td><td>",
             $this->tag->linkTo("products/delete/".$product->id, "Delete"), "</td><tr>";
 
     }

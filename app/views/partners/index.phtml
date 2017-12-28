@@ -23,8 +23,8 @@
             $partner->NIP, "</td><td>",
             $partner->webpage, "</td><td>",
             $partner->created, "</td><td>",
+            $this->tag->linkTo("partners/edit/".$partner->id, "Edit"), "</td><td>",
             $this->tag->linkTo("partners/delete/".$partner->id, "Delete"), "</td><tr>";
-
     }
     ?>
     </tbody>
