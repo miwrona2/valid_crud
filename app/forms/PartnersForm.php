@@ -27,9 +27,21 @@ Class PartnersForm extends Form
         }
         
         $name = new Text("name");
+        $name->setFilters(
+            [
+                'string',
+                'striptags',
+            ]
+        );
         $this->add($name);
         
         $description = new Text("description");
+        $description->setFilters(
+            [
+                'string',
+                'striptags',
+            ]
+        );
         $this->add($description);
         
         $NIP = new Text("NIP");
@@ -58,6 +70,12 @@ Class PartnersForm extends Form
         $this->add($NIP);
         
         $webpage = new Text("webpage");
+        $webpage->setFilters(
+            [
+                'string',
+                'striptags',
+            ]
+        );
         $this->add($webpage);
 
     }

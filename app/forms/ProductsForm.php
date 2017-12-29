@@ -34,7 +34,13 @@ Class ProductsForm extends Form
         $this->add($partner_id);
         
         $name = new Text("name");
-               $name->addValidators(
+        $name->setFilters(
+            [
+                'string',
+                'striptags',
+            ]
+        );
+        $name->addValidators(
             [
                 new Uniqueness(
                     [
@@ -46,6 +52,12 @@ Class ProductsForm extends Form
         $this->add($name);
         
         $description = new Text("description");
+        $description->setFilters(
+            [
+                'string',
+                'striptags',
+            ]
+        );
         $this->add($description);
         
         $price = new Text("price");
