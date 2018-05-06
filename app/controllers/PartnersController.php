@@ -215,4 +215,16 @@ class PartnersController extends Controller
         );
         
     }
+
+    public function descriptionAction()
+    {
+        $partners = Partners::find();
+
+        foreach ($partners as $partner) {
+            $this->view->pId = $partner->id;
+        }
+
+        $description = Partners::findFirst()->description;
+        $this->view->description = $description;
+    }
 }
